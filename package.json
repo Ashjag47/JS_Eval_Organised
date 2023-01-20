@@ -1,0 +1,19 @@
+{
+  "name": "js_eval_organised",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ashjag47/JS_Eval_Organised.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ashjag47/JS_Eval_Organised/issues"
+  },
+  "homepage": "https://github.com/Ashjag47/JS_Eval_Organised#readme"
+}
