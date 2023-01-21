@@ -47,6 +47,50 @@ const calculateTotalScore = (scoreCard) => {
       return "Invalid input";
     }
   }
+
+  /* -------------------------------------------------------------------------------------------------- */
+
+  // calculate total for valid cases
+  i = 0;
+  frame = 1;
+  let totalScore = 0;
+  while (frame <= frameScoreCard.length) {
+    if (frame < 10) {
+      // Strike when frame is NOT 10
+      if (scoreCard[i] == 10) {
+        totalScore += scoreCard[i] + scoreCard[i + 1] + scoreCard[i + 2];
+        i += 1;
+        frame += 1;
+      }
+      // Spare when frame is NOT 10
+      else if (scoreCard[i] + scoreCard[i + 1] == 10) {
+        totalScore += scoreCard[i] + scoreCard[i + 1] + scoreCard[i + 2];
+        i += 2;
+        frame += 1;
+      }
+      // Open when frame is NOT 10
+      else {
+        totalScore += scoreCard[i] + scoreCard[i + 1];
+        i += 2;
+        frame += 1;
+      }
+    } else {
+      // Strike when frame is 10
+      if (scoreCard[i] == 10) {
+        totalScore += sum(scoreCard.slice(i));
+      }
+      // Spare when frame is 10
+      else if (scoreCard[i] + scoreCard[i + 1] == 10) {
+        totalScore += sum(scoreCard.slice(i));
+      }
+      // Open when frame is 10
+      else {
+        totalScore += sum(scoreCard.slice(i));
+      }
+      frame = frameScoreCard.length + 1;
+    }
+  }
+  return totalScore;
 };
 
 module.exports = calculateTotalScore;
